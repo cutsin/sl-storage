@@ -28,5 +28,4 @@ Storage.SLS.set('foo', 'oops')
 Storage.SLS.get('foo', 'oops') // >> oops
 Storage.LS.get('foo', 'oops') // >> oops
 Storage.SS.get('foo', 'oops') // >> oops
-*/
 ```
