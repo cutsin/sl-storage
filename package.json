@@ -1,6 +1,6 @@
 {
   "name": "sl-storage",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Auto Fallback Storage",
   "main": "index.js",
   "repository": {
