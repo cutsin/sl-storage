@@ -19,9 +19,13 @@ class FallbackStorage {
       this.storage = memoryStorage
     }
   }
-  get (key) {
+  get (key, defVal) {
     let val = this.storage ? this.storage.getItem(key) : null
-    if (!val || val === 'null') return null
+    if (val === 'null') val = null
+    if (val === null && defVal !== undefined) {
+      this.set(key, defVal)
+      val = defVal
+    }
     try {
       val = JSON.parse(val)
     } catch (e) {}
@@ -37,11 +41,6 @@ class FallbackStorage {
     }
     try { this.storage.setItem(key, _val) } catch (e) {}
     return val
-  }
-  getSet (key, val) {
-    let _val = this.get(key)
-    if (!_val) this.set(key, val)
-    return _val || val
   }
   del (key) { this.storage.removeItem(key) }
 }
