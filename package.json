@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "Auto Fallback Storage",
   "main": "index.js",
+  "module": "index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:cutsin/sl-storage.git"
